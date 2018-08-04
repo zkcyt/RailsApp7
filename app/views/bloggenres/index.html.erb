@@ -1,0 +1,17 @@
+<h1>Bloggenres#index</h1>
+<p>ジャンル・データの一覧</p>
+<table>
+<tr>
+  <th>Id</th><th>name</th><th>memo</th>
+</tr>
+
+<% @data.each do |obj| %>
+<tr>
+  <td><%= obj.id %></td>
+  <td><%= obj.name %></td>
+  <td><%= obj.memo %></td>
+  <td><%= link_to("Edit", "/bloggenres/#{obj.id}") %></td>
+</tr>
+<% end %>
+</table>
+<p><%= link_to("新規作成", "/bloggenres/add" ) %></p>
