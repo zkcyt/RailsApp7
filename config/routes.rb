@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :replies
+  resources :opinions
+  resources :answers
+  resources :questions
   get 'blogs/index'
   get 'blogs', to: "blogs#index"
   get 'blogs/:page', to: "blogs#index"
