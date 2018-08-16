@@ -63,3 +63,8 @@ class QuestionsController < ApplicationController
       params.require(:question).permit(:title, :content, :name, :finished)
     end
 end
+
+
+
+
+  

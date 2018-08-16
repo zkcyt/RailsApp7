@@ -30,14 +30,14 @@ class AnswersController < ApplicationController
       @answer = Answer.new(answer_params)
       respond_to do |format|
         if @answer.save
-        num = Answer.where('question_id = ?',@answer.question_id).count
-        if num >= end_counter then
-          q = Question.find @answer.question_id
-          q.finished = true
-          q.save
-        end
-          format.html { redirect_to '/questions/' + @answer.question_id.to_s }
-          format.json { render :show, status: :created, location: @answer }
+          num = Answer.where('question_id = ?',@answer.question_id).count
+            if num >= end_counter then
+              q = Question.find @answer.question_id
+              q.finished = true
+              q.save
+            end
+              format.html { redirect_to '/questions/' + @answer.question_id.to_s }
+              format.json { render :show, status: :created, location: @answer }
         else
           format.html { render :new }
           format.json { render json: @answer.errors, status: :unprocessable_entity }
