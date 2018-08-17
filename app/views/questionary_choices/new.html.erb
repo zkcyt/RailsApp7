@@ -1,6 +1,6 @@
 <h1>選択肢の作成</h1>
-<h1>「<%= @questionary_item.content %>の選択肢</h1>
+<h1>「<%= @questionary_item.content %>」の選択肢</h1>
 
 <%= render 'form', questionary_choice: @questionary_choice %>
 
-<%= link_to '次の質問をする', '/questionary_items/new/@questionary_item.questionary_id.to_s' %>
+<%= link_to '次の質問をする', '/questionary_items/new/' + @questionary_item.questionary_id.to_s %>

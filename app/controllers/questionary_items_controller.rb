@@ -21,6 +21,7 @@ class QuestionaryItemsController < ApplicationController
 
   # GET /questionary_items/1/edit
   def edit
+    redirect_to '/questionaries'
   end
 
   # POST /questionary_items
@@ -30,7 +31,7 @@ class QuestionaryItemsController < ApplicationController
 
     respond_to do |format|
       if @questionary_item.save
-        format.html { redirect_to '/questionary_choices/new/ @questionary_item.id.to_s' }
+        format.html { redirect_to '/questionary_choices/new/' + @questionary_item.id.to_s }
         format.json { render :show, status: :created, location: @questionary_item }
       else
         format.html { render :new }
@@ -42,25 +43,13 @@ class QuestionaryItemsController < ApplicationController
   # PATCH/PUT /questionary_items/1
   # PATCH/PUT /questionary_items/1.json
   def update
-    respond_to do |format|
-      if @questionary_item.update(questionary_item_params)
-        format.html { redirect_to @questionary_item, notice: 'Questionary item was successfully updated.' }
-        format.json { render :show, status: :ok, location: @questionary_item }
-      else
-        format.html { render :edit }
-        format.json { render json: @questionary_item.errors, status: :unprocessable_entity }
-      end
-    end
+    redirect_to '/questionaries'
   end
 
   # DELETE /questionary_items/1
   # DELETE /questionary_items/1.json
   def destroy
-    @questionary_item.destroy
-    respond_to do |format|
-      format.html { redirect_to questionary_items_url, notice: 'Questionary item was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to '/questionaries'
   end
 
   private
