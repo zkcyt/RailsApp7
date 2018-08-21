@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :board_messages
+  resources :board_users
   resources :data_pages
   # get 'data_pages/index'
   # get 'data_pages', to: "data_pages#index"

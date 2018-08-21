@@ -11916,3 +11916,361 @@ Processing by DataPagesController#index as HTML
 Completed 200 OK in 763ms (Views: 743.0ms | ActiveRecord: 0.0ms)
 
 
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBoardUsers (20180821021925)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "board_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nickname" text, "account_id" integer, "memo" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180821021925"]]
+  [1m[35m (15.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateBoardMessages (20180821021957)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "board_messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "board_user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180821021957"]]
+  [1m[35m (15.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_accounts_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_accounts_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_accounts_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_accounts_on_email' AND type='index'
+[0m
+Started GET "/blogs" for 127.0.0.1 at 2018-08-21 15:10:18 +0900
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#index as HTML
+  [1m[36mBlogconfig Load (0.0ms)[0m  [1m[34mSELECT  "blogconfigs".* FROM "blogconfigs" WHERE "blogconfigs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering blogs/index.html.erb within layouts/blogs
+  [1m[36mBlogpost Load (15.6ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  Rendered blogs/index.html.erb within layouts/blogs (86.7ms)
+  [1m[36mBloggenre Load (0.0ms)[0m  [1m[34mSELECT "bloggenres".* FROM "bloggenres"[0m
+Completed 200 OK in 3276ms (Views: 3059.9ms | ActiveRecord: 33.2ms)
+
+
+Started GET "/board_users" for 127.0.0.1 at 2018-08-21 15:10:29 +0900
+Processing by BoardUsersController#index as HTML
+Completed 401 Unauthorized in 54ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/sign_in" for 127.0.0.1 at 2018-08-21 15:10:29 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (191.1ms)
+Completed 200 OK in 932ms (Views: 899.8ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/accounts/sign_in" for 127.0.0.1 at 2018-08-21 15:10:59 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vaUF5Sf7Xk6fmVPJpucRgdBEecIK2Azs+ebTk6W0wznSwvVSNtp8onmfIY8Z9IzbYRY+vUUq4ZtSmE3SCK96mw==", "account"=>{"email"=>"aaaaa@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["email", "aaaaa@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[33mUPDATE "accounts" SET "remember_created_at" = ?, "updated_at" = ? WHERE "accounts"."id" = ?[0m  [["remember_created_at", "2018-08-21 06:11:00.018565"], ["updated_at", "2018-08-21 06:11:00.020561"], ["id", 1]]
+  [1m[35m (12.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[33mUPDATE "accounts" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "updated_at" = ? WHERE "accounts"."id" = ?[0m  [["sign_in_count", 5], ["current_sign_in_at", "2018-08-21 06:11:00.112607"], ["last_sign_in_at", "2018-08-20 01:28:15.929355"], ["updated_at", "2018-08-21 06:11:00.114606"], ["id", 1]]
+  [1m[35m (15.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/board_users
+Completed 302 Found in 1140ms (ActiveRecord: 35.0ms)
+
+
+Started GET "/board_users" for 127.0.0.1 at 2018-08-21 15:11:00 +0900
+Processing by BoardUsersController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBoardUser Load (0.0ms)[0m  [1m[34mSELECT "board_users".* FROM "board_users" WHERE (account_id == 1)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "board_users" ("nickname", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["nickname", "<< no name >>"], ["account_id", 1], ["created_at", "2018-08-21 06:11:00.726233"], ["updated_at", "2018-08-21 06:11:00.726233"]]
+  [1m[35m (12.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBoardUser Load (0.0ms)[0m  [1m[34mSELECT "board_users".* FROM "board_users" WHERE (account_id == 1)[0m
+  Rendering board_users/index.html.erb within layouts/application
+  Rendered board_users/index.html.erb within layouts/application (514.7ms)
+Completed 500 Internal Server Error in 927ms (ActiveRecord: 16.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `board_user' for #<#<Class:0x000000000e04bb78>:0x000000000e049cd8>
+Did you mean?  @board_user):
+    1: <p id="notice"><%= notice %></p>
+    2: 
+    3: <h1>User Home</h1>
+    4: <h2><%= board_user.account_id %>さんの設定</h2>
+    5: <%= render 'form', board_user: @board_user %>
+    6: 
+    7: <hr>
+  
+app/views/board_users/index.html.erb:4:in `_app_views_board_users_index_html_erb__646663340_106071260'
+Started GET "/board_users" for 127.0.0.1 at 2018-08-21 15:13:36 +0900
+Processing by BoardUsersController#index as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBoardUser Load (0.0ms)[0m  [1m[34mSELECT "board_users".* FROM "board_users" WHERE (account_id == 1)[0m
+  Rendering board_users/index.html.erb within layouts/application
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered board_users/_form.html.erb (69.0ms)
+  Rendered board_users/index.html.erb within layouts/application (96.0ms)
+Completed 200 OK in 508ms (Views: 483.5ms | ActiveRecord: 2.0ms)
+
+
+Started PATCH "/board_users/1" for 127.0.0.1 at 2018-08-21 15:14:54 +0900
+Processing by BoardUsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2EAhGQwCY6/emY2pCkSFoWSn+ah1r8cqjHS2bSqdplFRwDOcCeyfu5SaKSzVFoxJW88BB9r9W5mGbTomDCK/iQ==", "board_user"=>{"nickname"=>"AAA", "account_id"=>"1", "memo"=>"趣味は旅行です。旅行に興味があります。"}, "commit"=>"Update Board user", "id"=>"1"}
+  [1m[36mBoardUser Load (0.0ms)[0m  [1m[34mSELECT  "board_users".* FROM "board_users" WHERE "board_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (4.0ms)[0m  [1m[33mUPDATE "board_users" SET "nickname" = ?, "memo" = ?, "updated_at" = ? WHERE "board_users"."id" = ?[0m  [["nickname", "AAA"], ["memo", "趣味は旅行です。旅行に興味があります。"], ["updated_at", "2018-08-21 06:14:54.291974"], ["id", 1]]
+  [1m[35m (11.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/board_messages
+Completed 302 Found in 29ms (ActiveRecord: 17.0ms)
+
+
+Started GET "/board_messages" for 127.0.0.1 at 2018-08-21 15:14:54 +0900
+Processing by BoardMessagesController#index as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBoardMessage Load (1.0ms)[0m  [1m[34mSELECT  "board_messages".* FROM "board_messages" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 500 Internal Server Error in 197ms (ActiveRecord: 1.0ms)
+
+
+  
+  [1m[36mCACHE BoardMessage Load (0.0ms)[0m  [1m[34mSELECT  "board_messages".* FROM "board_messages" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+NoMethodError (undefined method `users' for #<BoardMessagesController:0x000000000f25fa58>):
+  
+app/controllers/board_messages_controller.rb:10:in `index'
+Started GET "/board_messages" for 127.0.0.1 at 2018-08-21 15:16:19 +0900
+Processing by BoardMessagesController#index as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBoardUser Load (0.0ms)[0m  [1m[34mSELECT "board_users".* FROM "board_users" WHERE (account_id == 1)[0m
+  Rendering board_messages/index.html.erb within layouts/application
+  Rendered board_messages/_form.html.erb (3.0ms)
+  [1m[36mBoardMessage Load (0.0ms)[0m  [1m[34mSELECT  "board_messages".* FROM "board_messages" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered board_messages/index.html.erb within layouts/application (147.4ms)
+Completed 200 OK in 573ms (Views: 506.1ms | ActiveRecord: 5.0ms)
+
+
+Started PATCH "/board_users/1" for 127.0.0.1 at 2018-08-21 15:16:32 +0900
+Processing by BoardUsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2EAhGQwCY6/emY2pCkSFoWSn+ah1r8cqjHS2bSqdplFRwDOcCeyfu5SaKSzVFoxJW88BB9r9W5mGbTomDCK/iQ==", "board_user"=>{"nickname"=>"AAA", "account_id"=>"1", "memo"=>"趣味は旅行です。旅行に興味があります。"}, "commit"=>"Update Board user", "id"=>"1"}
+  [1m[36mBoardUser Load (0.0ms)[0m  [1m[34mSELECT  "board_users".* FROM "board_users" WHERE "board_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/board_messages
+Completed 302 Found in 14ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/board_messages" for 127.0.0.1 at 2018-08-21 15:16:32 +0900
+Processing by BoardMessagesController#index as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBoardUser Load (1.0ms)[0m  [1m[34mSELECT "board_users".* FROM "board_users" WHERE (account_id == 1)[0m
+  Rendering board_messages/index.html.erb within layouts/application
+  Rendered board_messages/_form.html.erb (3.0ms)
+  [1m[36mBoardMessage Load (0.0ms)[0m  [1m[34mSELECT  "board_messages".* FROM "board_messages" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered board_messages/index.html.erb within layouts/application (66.8ms)
+Completed 200 OK in 434ms (Views: 408.9ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/board_messages" for 127.0.0.1 at 2018-08-21 15:17:19 +0900
+Processing by BoardMessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lMcynXYr+SkdC9nLeoU8csXuOSZjWmome5EQrhIQPMIdRyAYc8UFPVcIfU6l1zWa+obBicwI9pVxiJzlNK8lGg==", "board_message"=>{"content"=>"最近、沖縄に行きました。とてもよかったです。", "board_user_id"=>"1"}, "commit"=>"Create Board message"}
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBoardUser Load (0.0ms)[0m  [1m[34mSELECT "board_users".* FROM "board_users" WHERE (account_id == 1)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBoardUser Load (0.0ms)[0m  [1m[34mSELECT  "board_users".* FROM "board_users" WHERE "board_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (3.0ms)[0m  [1m[32mINSERT INTO "board_messages" ("content", "board_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "最近、沖縄に行きました。とてもよかったです。"], ["board_user_id", 1], ["created_at", "2018-08-21 06:17:19.152048"], ["updated_at", "2018-08-21 06:17:19.152048"]]
+  [1m[35m (14.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/board_messages
+Completed 302 Found in 35ms (ActiveRecord: 17.0ms)
+
+
+Started GET "/board_messages" for 127.0.0.1 at 2018-08-21 15:17:19 +0900
+Processing by BoardMessagesController#index as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBoardUser Load (1.0ms)[0m  [1m[34mSELECT "board_users".* FROM "board_users" WHERE (account_id == 1)[0m
+  Rendering board_messages/index.html.erb within layouts/application
+  Rendered board_messages/_form.html.erb (4.0ms)
+  [1m[36mBoardMessage Load (1.0ms)[0m  [1m[34mSELECT  "board_messages".* FROM "board_messages" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mBoardUser Load (0.0ms)[0m  [1m[34mSELECT  "board_users".* FROM "board_users" WHERE "board_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered board_messages/index.html.erb within layouts/application (96.9ms)
+Completed 200 OK in 527ms (Views: 491.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/board_users/1" for 127.0.0.1 at 2018-08-21 15:17:54 +0900
+Processing by BoardUsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBoardUser Load (0.0ms)[0m  [1m[34mSELECT  "board_users".* FROM "board_users" WHERE "board_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAccount Load (15.6ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE BoardUser Load (0.0ms)[0m  [1m[34mSELECT  "board_users".* FROM "board_users" WHERE "board_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering board_users/show.html.erb within layouts/application
+  Rendered board_users/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 384ms (Views: 349.0ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/board_messages" for 127.0.0.1 at 2018-08-21 15:18:01 +0900
+Processing by BoardMessagesController#index as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBoardUser Load (0.0ms)[0m  [1m[34mSELECT "board_users".* FROM "board_users" WHERE (account_id == 1)[0m
+  Rendering board_messages/index.html.erb within layouts/application
+  Rendered board_messages/_form.html.erb (0.0ms)
+  [1m[36mBoardMessage Load (0.0ms)[0m  [1m[34mSELECT  "board_messages".* FROM "board_messages" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mBoardUser Load (0.0ms)[0m  [1m[34mSELECT  "board_users".* FROM "board_users" WHERE "board_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered board_messages/index.html.erb within layouts/application (62.5ms)
+Completed 200 OK in 426ms (Views: 402.6ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/board_messages" for 127.0.0.1 at 2018-08-21 15:18:58 +0900
+Processing by BoardMessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oMlYgttiRXMCKXf3eN1oh22xqTOykpF/G46lOHL48m5QqmJIr5pvwMspruRQyV43u2Vg5klYfhtol6+nrGfYfQ==", "board_message"=>{"content"=>"石見銀山もよかったです。", "board_user_id"=>"1"}, "commit"=>"Create Board message"}
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBoardUser Load (0.0ms)[0m  [1m[34mSELECT "board_users".* FROM "board_users" WHERE (account_id == 1)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBoardUser Load (0.0ms)[0m  [1m[34mSELECT  "board_users".* FROM "board_users" WHERE "board_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (3.0ms)[0m  [1m[32mINSERT INTO "board_messages" ("content", "board_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "石見銀山もよかったです。"], ["board_user_id", 1], ["created_at", "2018-08-21 06:18:58.685863"], ["updated_at", "2018-08-21 06:18:58.685863"]]
+  [1m[35m (11.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/board_messages
+Completed 302 Found in 29ms (ActiveRecord: 15.0ms)
+
+
+Started GET "/board_messages" for 127.0.0.1 at 2018-08-21 15:18:58 +0900
+Processing by BoardMessagesController#index as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBoardUser Load (0.0ms)[0m  [1m[34mSELECT "board_users".* FROM "board_users" WHERE (account_id == 1)[0m
+  Rendering board_messages/index.html.erb within layouts/application
+  Rendered board_messages/_form.html.erb (7.0ms)
+  [1m[36mBoardMessage Load (1.0ms)[0m  [1m[34mSELECT  "board_messages".* FROM "board_messages" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mBoardUser Load (0.0ms)[0m  [1m[34mSELECT  "board_users".* FROM "board_users" WHERE "board_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE BoardUser Load (0.0ms)[0m  [1m[34mSELECT  "board_users".* FROM "board_users" WHERE "board_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered board_messages/index.html.erb within layouts/application (116.9ms)
+Completed 200 OK in 545ms (Views: 505.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/board_users/1" for 127.0.0.1 at 2018-08-21 15:19:07 +0900
+Processing by BoardUsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBoardUser Load (0.0ms)[0m  [1m[34mSELECT  "board_users".* FROM "board_users" WHERE "board_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE BoardUser Load (0.0ms)[0m  [1m[34mSELECT  "board_users".* FROM "board_users" WHERE "board_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering board_users/show.html.erb within layouts/application
+  Rendered board_users/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 333ms (Views: 310.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/board_messages" for 127.0.0.1 at 2018-08-21 15:19:11 +0900
+Processing by BoardMessagesController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBoardUser Load (0.0ms)[0m  [1m[34mSELECT "board_users".* FROM "board_users" WHERE (account_id == 1)[0m
+  Rendering board_messages/index.html.erb within layouts/application
+  Rendered board_messages/_form.html.erb (2.0ms)
+  [1m[36mBoardMessage Load (0.0ms)[0m  [1m[34mSELECT  "board_messages".* FROM "board_messages" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mBoardUser Load (0.0ms)[0m  [1m[34mSELECT  "board_users".* FROM "board_users" WHERE "board_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE BoardUser Load (0.0ms)[0m  [1m[34mSELECT  "board_users".* FROM "board_users" WHERE "board_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered board_messages/index.html.erb within layouts/application (63.9ms)
+Completed 200 OK in 416ms (Views: 397.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/board_users" for 127.0.0.1 at 2018-08-21 15:19:17 +0900
+Processing by BoardUsersController#index as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBoardUser Load (1.0ms)[0m  [1m[34mSELECT "board_users".* FROM "board_users" WHERE (account_id == 1)[0m
+  Rendering board_users/index.html.erb within layouts/application
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered board_users/_form.html.erb (15.6ms)
+  Rendered board_users/index.html.erb within layouts/application (31.3ms)
+Completed 200 OK in 358ms (Views: 339.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/board_messages" for 127.0.0.1 at 2018-08-21 15:19:23 +0900
+Processing by BoardMessagesController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBoardUser Load (0.0ms)[0m  [1m[34mSELECT "board_users".* FROM "board_users" WHERE (account_id == 1)[0m
+  Rendering board_messages/index.html.erb within layouts/application
+  Rendered board_messages/_form.html.erb (0.0ms)
+  [1m[36mBoardMessage Load (0.0ms)[0m  [1m[34mSELECT  "board_messages".* FROM "board_messages" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mBoardUser Load (0.0ms)[0m  [1m[34mSELECT  "board_users".* FROM "board_users" WHERE "board_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE BoardUser Load (0.0ms)[0m  [1m[34mSELECT  "board_users".* FROM "board_users" WHERE "board_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered board_messages/index.html.erb within layouts/application (67.0ms)
+Completed 200 OK in 468ms (Views: 434.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/board_users/1" for 127.0.0.1 at 2018-08-21 15:20:43 +0900
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BoardUsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBoardUser Load (1.0ms)[0m  [1m[34mSELECT  "board_users".* FROM "board_users" WHERE "board_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE BoardUser Load (0.0ms)[0m  [1m[34mSELECT  "board_users".* FROM "board_users" WHERE "board_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering board_users/show.html.erb within layouts/application
+  Rendered board_users/show.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 1261ms (Views: 1150.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/answers" for 127.0.0.1 at 2018-08-21 15:21:05 +0900
+Processing by AnswersController#index as HTML
+Redirected to http://localhost:3000/questions
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2018-08-21 15:21:05 +0900
+Processing by QuestionsController#index as HTML
+  Rendering questions/index.html.erb within layouts/questions
+  [1m[36mQuestion Load (0.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions" ORDER BY "questions"."created_at" DESC[0m
+  Rendered questions/index.html.erb within layouts/questions (15.6ms)
+Completed 200 OK in 348ms (Views: 332.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/sign_out" for 127.0.0.1 at 2018-08-21 15:21:11 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/accounts/sign_out"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/board_messages" for 127.0.0.1 at 2018-08-21 15:21:55 +0900
+Processing by BoardMessagesController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBoardUser Load (0.0ms)[0m  [1m[34mSELECT "board_users".* FROM "board_users" WHERE (account_id == 1)[0m
+  Rendering board_messages/index.html.erb within layouts/application
+  Rendered board_messages/_form.html.erb (31.3ms)
+  [1m[36mBoardMessage Load (0.0ms)[0m  [1m[34mSELECT  "board_messages".* FROM "board_messages" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mBoardUser Load (0.0ms)[0m  [1m[34mSELECT  "board_users".* FROM "board_users" WHERE "board_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE BoardUser Load (0.0ms)[0m  [1m[34mSELECT  "board_users".* FROM "board_users" WHERE "board_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered board_messages/index.html.erb within layouts/application (125.0ms)
+Completed 200 OK in 495ms (Views: 467.3ms | ActiveRecord: 0.0ms)
+
+
