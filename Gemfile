@@ -50,3 +50,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
+
+gem 'kaminari' #, (1.1.1)
+gem 'kaminari-actionview' #, (1.1.1)
+gem 'kaminari-activerecord' #, (1.1.1)
+gem 'kaminari-core' #, (1.1.1)

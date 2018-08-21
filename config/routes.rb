@@ -1,12 +1,22 @@
 Rails.application.routes.draw do
 
+  resources :data_pages
+  # get 'data_pages/index'
+  # get 'data_pages', to: "data_pages#index"
+
   devise_for :accounts
   # root 'home#index'
-  root 'helo#index'
+  # root 'helo#index'
 
   get 'holo/index'
   get 'helo', to: "helo#index"
   get 'helo/login_check'
+
+  post 'questionaries/:id', to: "questionaries#sendform"
+  get 'questionary_items/new/:id', to: "questionary_items#new"
+  get 'questionary_choices/new/:id', to: "questionary_choices#new"
+  get 'questionary_results/calc/:id', to: "questionary_results#calc"
+
 
   resources :questionary_results
   resources :questionary_choices

@@ -5,4 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Blogconfig.create(id:1, title:'Myblog', subtitle:'myideas', stylename:'gray')
+
+
+# Blogconfig.create(id:1, title:'Myblog', subtitle:'myideas', stylename:'gray')
+data = ['one', 'two', 'three', 'four', 'five', 'seven', 'eight', 'nine', 'ten', 'zero', 'white', 'black', 'gray', 'red', 'blue', 'green', 'yellow', 'cyan', 'magenta']
+
+for i in 1..100 do
+  DataPage.create data:data.sample
+end
