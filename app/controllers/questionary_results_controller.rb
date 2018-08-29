@@ -40,10 +40,6 @@ class QuestionaryResultsController < ApplicationController
     end
   end
 
-
-
-
-
   # GET /questionary_results/1/edit
   def edit
   end

@@ -30,7 +30,7 @@ class AnswersController < ApplicationController
       @answer = Answer.new(answer_params)
       respond_to do |format|
         if @answer.save
-          num = Answer.where('question_id = ?',@answer.question_id).count
+          num = Answer.where('question_id = ?', @answer.question_id).count
             if num >= end_counter then
               q = Question.find @answer.question_id
               q.finished = true

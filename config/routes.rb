@@ -1,5 +1,28 @@
 Rails.application.routes.draw do
 
+  get 'people/index'
+  get 'people', to: 'people#index'
+  get 'people/add'
+  post 'people/add', to: 'people#create'
+  get 'people/:id', to: 'people#show'
+  get 'people/edit/:id', to: 'people#edit'
+  patch 'people/edit/:id', to: 'people#update'
+  get 'people/delete/:id', to: 'people#delete'
+
+
+  resources :posts do
+    resources :likes, only: [:create, :destroy]
+  end
+
+  resources :users
+  post "likes/:post_id/create" => "likes#create"
+  post "likes/:post_id/destroy" => "likes#destroy"
+
+  get 'ajax/index'
+  get 'ajax/data'
+  post 'ajax/data'
+  # get 'ajax', to: "ajax#index"
+
   resources :board_messages
   resources :board_users
   resources :data_pages
@@ -14,19 +37,20 @@ Rails.application.routes.draw do
   get 'helo', to: "helo#index"
   get 'helo/login_check'
 
-  post 'questionaries/:id', to: "questionaries#sendform"
-  get 'questionary_items/new/:id', to: "questionary_items#new"
-  get 'questionary_choices/new/:id', to: "questionary_choices#new"
-  get 'questionary_results/calc/:id', to: "questionary_results#calc"
-
-
+  get 'questionary_items/new/:id', to: 'questionary_items#new'
+  get 'questionary_choices/new/:id', to: 'questionary_choices#new'
+  post 'questionaries/:id', to: 'questionaries#sendform'
+  get 'questionary_results/calc/:id', to: 'questionary_results#calc'
   resources :questionary_results
   resources :questionary_choices
   resources :questionary_items
   resources :questionaries
 
+
   resources :answers
   resources :questions
+
+
   get 'blogs/index'
   get 'blogs', to: "blogs#index"
   get 'blogs/:page', to: "blogs#index"

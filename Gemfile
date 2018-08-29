@@ -55,3 +55,5 @@ gem 'kaminari' #, (1.1.1)
 gem 'kaminari-actionview' #, (1.1.1)
 gem 'kaminari-activerecord' #, (1.1.1)
 gem 'kaminari-core' #, (1.1.1)
+
+gem 'jquery-rails'

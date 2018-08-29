@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180821021957) do
+ActiveRecord::Schema.define(version: 20180827124029) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -82,12 +82,36 @@ ActiveRecord::Schema.define(version: 20180821021957) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "likes", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "opinions", force: :cascade do |t|
     t.text "title"
     t.text "content"
     t.text "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "people", force: :cascade do |t|
+    t.text "name"
+    t.integer "age"
+    t.text "mail"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.text "title"
+    t.text "content"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "likes_count"
   end
 
   create_table "questionaries", force: :cascade do |t|
@@ -133,6 +157,14 @@ ActiveRecord::Schema.define(version: 20180821021957) do
     t.integer "opinion_id"
     t.text "content"
     t.text "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.text "sitename"
+    t.integer "account_id"
+    t.text "intro"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -8,8 +8,12 @@
 
 
 # Blogconfig.create(id:1, title:'Myblog', subtitle:'myideas', stylename:'gray')
-data = ['one', 'two', 'three', 'four', 'five', 'seven', 'eight', 'nine', 'ten', 'zero', 'white', 'black', 'gray', 'red', 'blue', 'green', 'yellow', 'cyan', 'magenta']
+# data = ['one', 'two', 'three', 'four', 'five', 'seven', 'eight', 'nine', 'ten', 'zero', 'white', 'black', 'gray', 'red', 'blue', 'green', 'yellow', 'cyan', 'magenta']
 
-for i in 1..100 do
-  DataPage.create data:data.sample
-end
+# for i in 1..100 do
+  # DataPage.create data:data.sample
+# end
+
+Person.create(name:'taro', age:35, mail:'taro@gmail')
+Person.create(name:'yoko', age:45, mail:'YOko@gmail')
+Person.create(name:'tami', age:55, mail:'Tami@gmail')
