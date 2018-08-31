@@ -17,9 +17,10 @@
 
   <tbody>
     <% @posts.each do |post| %>
-      <tr>
+      <tr>=
         <td><%= post.title %></td>
-        <td><%= post.content %></td>
+        <td><%= post.content %>   <small><i class="fa fa-heart fa-fw"></i>いいね！ <%= post.likes.count %>件</small></td>
+
         <td><%= link_to post.user.sitename,
                         controller: :users, action: :show,
                         id:post.user_id %></td>
@@ -29,6 +30,7 @@
 
 </table>
 
+<%# = render "likes/like", post: @post %>
 <br>
 <div><%= paginate @posts %></div>
 <hr>

@@ -1,3 +1,39 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// いいねボタン
+// .like-want{
+  // overflow: hidden;
+// }
+/* clearfix */
+// .like-want:before,
+// .like-want:after {
+  // content: "";
+  // display: table;
+// }
+// .like-want:after {
+  // clear: both;
+// }
+//.floats {
+	// float: left;
+// }
+.like-now{
+  color:#fed136;
+}
+.like-now:hover{
+  background-color:white;
+}
+.like-not{
+  background-color:white;
+  color:gray;
+  transition: .8s;
+}
+// .like-not:hover{
+//   background-color:white;
+//   color:#fed136;
+// }
+// .like-count{
+  // padding: 0.3rem;
+// }
+// いいねボタンここまで

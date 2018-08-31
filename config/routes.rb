@@ -1,22 +1,16 @@
 Rails.application.routes.draw do
 
-  get 'people/index'
-  get 'people', to: 'people#index'
-  get 'people/add'
-  post 'people/add', to: 'people#create'
-  get 'people/:id', to: 'people#show'
-  get 'people/edit/:id', to: 'people#edit'
-  patch 'people/edit/:id', to: 'people#update'
-  get 'people/delete/:id', to: 'people#delete'
+  resources :likes, only: [:create, :destroy]
 
+  # post "likes/:post_id/create" => "likes#create"
+  # post "likes/:post_id/destroy" => "likes#destroy"
+
+  resources :users
 
   resources :posts do
     resources :likes, only: [:create, :destroy]
   end
 
-  resources :users
-  post "likes/:post_id/create" => "likes#create"
-  post "likes/:post_id/destroy" => "likes#destroy"
 
   get 'ajax/index'
   get 'ajax/data'
@@ -82,5 +76,15 @@ Rails.application.routes.draw do
   get 'blogconfigs', to: 'blogconfigs#index'
   get 'blogconfigs/edit'
   patch 'blogconfigs/edit'
+
+  get 'people/index'
+  get 'people', to: 'people#index'
+  get 'people/add'
+  post 'people/add', to: 'people#create'
+  get 'people/:id', to: 'people#show'
+  get 'people/edit/:id', to: 'people#edit'
+  patch 'people/edit/:id', to: 'people#update'
+  get 'people/delete/:id', to: 'people#delete'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

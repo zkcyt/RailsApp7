@@ -17360,3 +17360,1632 @@ Processing by AjaxController#data as */*
 Completed 200 OK in 3543ms (Views: 2212.6ms)
 
 
+Started GET "/posts" for 127.0.0.1 at 2018-08-29 11:43:37 +0900
+Started GET "/posts" for 127.0.0.1 at 2018-08-29 11:43:37 +0900
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[33mUPDATE "accounts" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "accounts"."id" = ?[0m  [["current_sign_in_at", "2018-08-29 02:43:38.033467"], ["last_sign_in_at", "2018-08-27 12:18:32.815744"], ["sign_in_count", 6], ["updated_at", "2018-08-29 02:43:38.035465"], ["id", 4]]
+  [1m[35m (16.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (507.2ms)
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (1052.8ms)
+Completed 200 OK in 16377ms (Views: 15952.2ms | ActiveRecord: 26.0ms)
+
+
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[33mUPDATE "accounts" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "accounts"."id" = ?[0m  [["current_sign_in_at", "2018-08-29 02:43:56.052815"], ["last_sign_in_at", "2018-08-29 02:43:38.033467"], ["sign_in_count", 7], ["updated_at", "2018-08-29 02:43:56.056812"], ["id", 4]]
+  [1m[35m (14.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (4.0ms)
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (133.9ms)
+Completed 200 OK in 990ms (Views: 788.0ms | ActiveRecord: 27.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-08-29 11:55:26 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.0ms)
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (117.0ms)
+Completed 500 Internal Server Error in 292ms (ActiveRecord: 4.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for #<Post:0x000000000c810ea0>
+Did you mean?  user_id):
+    20:       <tr>
+    21:         <td><%= post.title %></td>
+    22:         <td><%= post.content %></td>
+    23:         <td><%= link_to post.user.sitename,
+    24:                         controller: :users, action: :show,
+    25:                         id:post.user_id %></td>
+    26:       </tr>
+  
+app/views/posts/index.html.erb:23:in `block in _app_views_posts_index_html_erb__960416888_106078240'
+app/views/posts/index.html.erb:19:in `_app_views_posts_index_html_erb__960416888_106078240'
+Started GET "/users" for 127.0.0.1 at 2018-08-29 12:00:33 +0900
+Processing by UsersController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered users/_form.html.erb (4.0ms)
+  Rendered users/index.html.erb within layouts/application (1034.1ms)
+Completed 200 OK in 1519ms (Views: 1440.1ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2018-08-29 12:00:51 +0900
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"esK5ShD53Uvjdgv+jB0c9erOfwz+s3Hq2RbGJzbH0Sta+NkJ8lLOovsUBHuZfW9xrkZxNZySZLiqhtSV8Zc2WA==", "user"=>{"sitename"=>"Yoko", "account_id"=>"4", "intro"=>"もっといろいろ便利になったらいいな。旅行やウォーキングが好きです"}, "commit"=>"Update User", "id"=>"1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (4.0ms)[0m  [1m[33mUPDATE "users" SET "intro" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["intro", "もっといろいろ便利になったらいいな。旅行やウォーキングが好きです"], ["updated_at", "2018-08-29 03:00:51.468457"], ["id", 1]]
+  [1m[35m (54.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 89ms (ActiveRecord: 59.2ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-08-29 12:00:51 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (5.0ms)
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (85.9ms)
+Completed 500 Internal Server Error in 283ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for #<Post:0x000000000c349cc8>
+Did you mean?  user_id):
+    20:       <tr>
+    21:         <td><%= post.title %></td>
+    22:         <td><%= post.content %></td>
+    23:         <td><%= link_to post.user.sitename,
+    24:                         controller: :users, action: :show,
+    25:                         id:post.user_id %></td>
+    26:       </tr>
+  
+app/views/posts/index.html.erb:23:in `block in _app_views_posts_index_html_erb__960416888_103390300'
+app/views/posts/index.html.erb:19:in `_app_views_posts_index_html_erb__960416888_103390300'
+Started GET "/posts" for 127.0.0.1 at 2018-08-29 12:05:31 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.0ms)
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (49.0ms)
+Completed 500 Internal Server Error in 175ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for #<Post:0x000000000bfa5090>
+Did you mean?  user_id):
+    20:       <tr>
+    21:         <td><%= post.title %></td>
+    22:         <td><%= post.content %></td>
+    23:         <td><%= link_to post.user.sitename,
+    24:                         controller: :users, action: :show,
+    25:                         id:post.user_id %></td>
+    26:       </tr>
+  
+app/views/posts/index.html.erb:23:in `block in _app_views_posts_index_html_erb__960416888_100978380'
+app/views/posts/index.html.erb:19:in `_app_views_posts_index_html_erb__960416888_100978380'
+Started GET "/posts" for 127.0.0.1 at 2018-08-29 12:06:38 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.0ms)
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (52.0ms)
+Completed 500 Internal Server Error in 195ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for #<Post:0x0000000008cb7110>
+Did you mean?  user_id):
+    20:       <tr>
+    21:         <td><%= post.title %></td>
+    22:         <td><%= post.content %></td>
+    23:         <td><%= link_to post.user.sitename,
+    24:                         controller: :users, action: :show,
+    25:                         id:post.user_id %></td>
+    26:       </tr>
+  
+app/views/posts/index.html.erb:23:in `block in _app_views_posts_index_html_erb__960416888_93061700'
+app/views/posts/index.html.erb:19:in `_app_views_posts_index_html_erb__960416888_93061700'
+Started GET "/posts" for 127.0.0.1 at 2018-08-29 12:07:24 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.0ms)
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (47.4ms)
+Completed 500 Internal Server Error in 176ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for #<Post:0x00000000074ad330>
+Did you mean?  user_id):
+    20:       <tr>
+    21:         <td><%= post.title %></td>
+    22:         <td><%= post.content %></td>
+    23:         <td><%= link_to post.user.sitename,
+    24:                         controller: :users, action: :show,
+    25:                         id:post.user_id %></td>
+    26:       </tr>
+  
+app/views/posts/index.html.erb:23:in `block in _app_views_posts_index_html_erb__960416888_64111080'
+app/views/posts/index.html.erb:19:in `_app_views_posts_index_html_erb__960416888_64111080'
+Started GET "/posts" for 127.0.0.1 at 2018-08-29 13:40:01 +0900
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.0ms)[0m  [1m[33mUPDATE "accounts" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "accounts"."id" = ?[0m  [["current_sign_in_at", "2018-08-29 04:40:04.227270"], ["last_sign_in_at", "2018-08-29 02:43:56.052815"], ["sign_in_count", 8], ["updated_at", "2018-08-29 04:40:04.235263"], ["id", 4]]
+  [1m[35m (68.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (303.9ms)
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (451.9ms)
+Completed 500 Internal Server Error in 1260ms (ActiveRecord: 72.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for #<Post:0x000000000904c7a8>
+Did you mean?  user_id):
+    20:       <tr>
+    21:         <td><%= post.title %></td>
+    22:         <td><%= post.content %></td>
+    23:         <td><%= link_to post.user.sitename,
+    24:                         controller: :users, action: :show,
+    25:                         id:post.user_id %></td>
+    26:       </tr>
+  
+app/views/posts/index.html.erb:23:in `block in _app_views_posts_index_html_erb__6040477_74643140'
+app/views/posts/index.html.erb:19:in `_app_views_posts_index_html_erb__6040477_74643140'
+Started GET "/posts" for 127.0.0.1 at 2018-08-29 13:40:06 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.0ms)[0m  [1m[33mUPDATE "accounts" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "accounts"."id" = ?[0m  [["current_sign_in_at", "2018-08-29 04:40:06.126801"], ["last_sign_in_at", "2018-08-29 04:40:04.227270"], ["sign_in_count", 9], ["updated_at", "2018-08-29 04:40:06.639003"], ["id", 4]]
+  [1m[35m (12.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (4.0ms)
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (72.0ms)
+Completed 500 Internal Server Error in 1920ms (ActiveRecord: 20.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for #<Post:0x000000000654b838>
+Did you mean?  user_id):
+    20:       <tr>
+    21:         <td><%= post.title %></td>
+    22:         <td><%= post.content %></td>
+    23:         <td><%= link_to post.user.sitename,
+    24:                         controller: :users, action: :show,
+    25:                         id:post.user_id %></td>
+    26:       </tr>
+  
+app/views/posts/index.html.erb:23:in `block in _app_views_posts_index_html_erb__6040477_61064220'
+app/views/posts/index.html.erb:19:in `_app_views_posts_index_html_erb__6040477_61064220'
+Started GET "/posts" for 127.0.0.1 at 2018-08-29 13:41:48 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[33mUPDATE "accounts" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "accounts"."id" = ?[0m  [["current_sign_in_at", "2018-08-29 04:41:48.692708"], ["last_sign_in_at", "2018-08-29 04:40:06.126801"], ["sign_in_count", 10], ["updated_at", "2018-08-29 04:41:48.692708"], ["id", 4]]
+  [1m[35m (32.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (8.0ms)
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (72.0ms)
+Completed 500 Internal Server Error in 304ms (ActiveRecord: 32.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `sitename' for 1:Integer):
+    20:       <tr>
+    21:         <td><%= post.title %></td>
+    22:         <td><%= post.content %></td>
+    23:         <td><%= link_to post.user_id.sitename,
+    24:                         controller: :users, action: :show,
+    25:                         id:post.user_id %></td>
+    26:       </tr>
+  
+app/views/posts/index.html.erb:23:in `block in _app_views_posts_index_html_erb__6040477_53877020'
+app/views/posts/index.html.erb:19:in `_app_views_posts_index_html_erb__6040477_53877020'
+Started GET "/posts" for 127.0.0.1 at 2018-08-29 13:43:17 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.0ms)[0m  [1m[33mUPDATE "accounts" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "accounts"."id" = ?[0m  [["current_sign_in_at", "2018-08-29 04:43:17.295830"], ["last_sign_in_at", "2018-08-29 04:41:48.692708"], ["sign_in_count", 11], ["updated_at", "2018-08-29 04:43:17.295830"], ["id", 4]]
+  [1m[35m (16.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (4.0ms)
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (64.0ms)
+Completed 500 Internal Server Error in 268ms (ActiveRecord: 20.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for #<Post:0x000000000749ca08>
+Did you mean?  user_id):
+    20:       <tr>
+    21:         <td><%= post.title %></td>
+    22:         <td><%= post.content %></td>
+    23:         <td><%= link_to post.user.sitename,
+    24:                         controller: :users, action: :show,
+    25:                         id:post.user_id %></td>
+    26:       </tr>
+  
+app/views/posts/index.html.erb:23:in `block in _app_views_posts_index_html_erb__6040477_61792340'
+app/views/posts/index.html.erb:19:in `_app_views_posts_index_html_erb__6040477_61792340'
+Started GET "/posts" for 127.0.0.1 at 2018-08-29 13:50:08 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.0ms)[0m  [1m[33mUPDATE "accounts" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "accounts"."id" = ?[0m  [["current_sign_in_at", "2018-08-29 04:50:08.299397"], ["last_sign_in_at", "2018-08-29 04:43:17.295830"], ["sign_in_count", 12], ["updated_at", "2018-08-29 04:50:08.303394"], ["id", 4]]
+  [1m[35m (12.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (4.0ms)
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (88.0ms)
+Completed 500 Internal Server Error in 280ms (ActiveRecord: 16.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for #<Post:0x0000000007766cc0>
+Did you mean?  user_id):
+    20:       <tr>
+    21:         <td><%= post.title %></td>
+    22:         <td><%= post.content %></td>
+    23:         <td><%= link_to post.user.sitename,
+    24:                         controller: :users, action: :show,
+    25:                         id:post.user_id %></td>
+    26:       </tr>
+  
+app/views/posts/index.html.erb:23:in `block in _app_views_posts_index_html_erb__6040477_63613540'
+app/views/posts/index.html.erb:19:in `_app_views_posts_index_html_erb__6040477_63613540'
+Started GET "/posts" for 127.0.0.1 at 2018-08-29 13:51:57 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.0ms)[0m  [1m[33mUPDATE "accounts" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "accounts"."id" = ?[0m  [["current_sign_in_at", "2018-08-29 04:51:57.493677"], ["last_sign_in_at", "2018-08-29 04:50:08.299397"], ["sign_in_count", 13], ["updated_at", "2018-08-29 04:51:57.497677"], ["id", 4]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (4.0ms)
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (68.0ms)
+Completed 500 Internal Server Error in 276ms (ActiveRecord: 12.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for #<Post:0x0000000007a4b878>
+Did you mean?  user_id):
+    20:       <tr>
+    21:         <td><%= post.title %></td>
+    22:         <td><%= post.content %></td>
+    23:         <td><%= link_to post.user.sitename,
+    24:                         controller: :users, action: :show,
+    25:                         id:post.user_id %></td>
+    26:       </tr>
+  
+app/views/posts/index.html.erb:23:in `block in _app_views_posts_index_html_erb__6040477_65028340'
+app/views/posts/index.html.erb:19:in `_app_views_posts_index_html_erb__6040477_65028340'
+Started GET "/likes/create" for 127.0.0.1 at 2018-08-29 13:58:02 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/likes/create"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/users" for 127.0.0.1 at 2018-08-29 13:58:33 +0900
+Processing by UsersController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (52.0ms)[0m  [1m[33mUPDATE "accounts" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "accounts"."id" = ?[0m  [["current_sign_in_at", "2018-08-29 04:58:33.189720"], ["last_sign_in_at", "2018-08-29 04:51:57.493677"], ["sign_in_count", 14], ["updated_at", "2018-08-29 04:58:33.193723"], ["id", 4]]
+  [1m[35m (195.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered users/_form.html.erb (8.0ms)
+  Rendered users/index.html.erb within layouts/application (859.7ms)
+Completed 200 OK in 3288ms (Views: 2948.9ms | ActiveRecord: 247.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-08-29 13:58:38 +0900
+Processing by UsersController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.0ms)[0m  [1m[33mUPDATE "accounts" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "accounts"."id" = ?[0m  [["current_sign_in_at", "2018-08-29 04:58:38.161655"], ["last_sign_in_at", "2018-08-29 04:58:33.189720"], ["sign_in_count", 15], ["updated_at", "2018-08-29 04:58:38.161655"], ["id", 4]]
+  [1m[35m (12.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered users/_form.html.erb (4.0ms)
+  Rendered users/index.html.erb within layouts/application (36.0ms)
+Completed 200 OK in 620ms (Views: 546.9ms | ActiveRecord: 20.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-08-29 13:58:59 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (4.0ms)
+  [1m[36mPost Load (4.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (68.4ms)
+Completed 500 Internal Server Error in 192ms (ActiveRecord: 4.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for #<Post:0x000000000d9bb948>
+Did you mean?  user_id):
+    20:       <tr>
+    21:         <td><%= post.title %></td>
+    22:         <td><%= post.content %></td>
+    23:         <td><%= link_to post.user.sitename,
+    24:                         controller: :users, action: :show,
+    25:                         id:post.user_id %></td>
+    26:       </tr>
+  
+app/views/posts/index.html.erb:23:in `block in _app_views_posts_index_html_erb__6040477_114810320'
+app/views/posts/index.html.erb:19:in `_app_views_posts_index_html_erb__6040477_114810320'
+Started GET "/posts" for 127.0.0.1 at 2018-08-29 14:05:02 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (4.0ms)
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (52.0ms)
+Completed 500 Internal Server Error in 188ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for #<Post:0x000000000df917f0>
+Did you mean?  user_id):
+    20:       <tr>
+    21:         <td><%= post.title %></td>
+    22:         <td><%= post.content %></td>
+    23:         <td><%= link_to post.user.sitename,
+    24:                         controller: :users, action: :show,
+    25:                         id:post.user_id %></td>
+    26:       </tr>
+  
+app/views/posts/index.html.erb:23:in `block in _app_views_posts_index_html_erb__6040477_118383800'
+app/views/posts/index.html.erb:19:in `_app_views_posts_index_html_erb__6040477_118383800'
+Started GET "/users" for 127.0.0.1 at 2018-08-29 14:15:38 +0900
+Processing by UsersController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered users/_form.html.erb (4.0ms)
+  Rendered users/index.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 524ms (Views: 467.6ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2018-08-29 14:16:13 +0900
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HZ7Av5MKWZAdATPba3oznqULQxV3qJvC6KThdayTXp9YelXU5znx4t8vEffJR6Ljw4TUKk+CSTb8S17dUX4W9A==", "user"=>{"sitename"=>"Yoko", "account_id"=>"4", "intro"=>"もっといろいろ便利になったらいいな。旅行やウォーキングが好きです。\r\n"}, "commit"=>"Update User", "id"=>"1"}
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (4.0ms)[0m  [1m[33mUPDATE "users" SET "intro" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["intro", "もっといろいろ便利になったらいいな。旅行やウォーキングが好きです。\r\n"], ["updated_at", "2018-08-29 05:16:13.856187"], ["id", 1]]
+  [1m[35m (12.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 32ms (ActiveRecord: 20.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-08-29 14:16:13 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (0.0ms)
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (72.0ms)
+Completed 500 Internal Server Error in 260ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for #<Post:0x000000000d7c9108>
+Did you mean?  user_id):
+    20:       <tr>
+    21:         <td><%= post.title %></td>
+    22:         <td><%= post.content %></td>
+    23:         <td><%= link_to post.user.sitename,
+    24:                         controller: :users, action: :show,
+    25:                         id:post.user_id %></td>
+    26:       </tr>
+  
+app/views/posts/index.html.erb:23:in `block in _app_views_posts_index_html_erb__6040477_113282780'
+app/views/posts/index.html.erb:19:in `_app_views_posts_index_html_erb__6040477_113282780'
+Started GET "/posts" for 127.0.0.1 at 2018-08-29 14:19:03 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (4.0ms)
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (48.0ms)
+Completed 500 Internal Server Error in 180ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for #<Post:0x000000000dd7de78>
+Did you mean?  user_id):
+    20:       <tr>
+    21:         <td><%= post.title %></td>
+    22:         <td><%= post.content %></td>
+    23:         <td><%= link_to post.user,
+    24:                         controller: :users, action: :show,
+    25:                         id:post.user_id %></td>
+    26:       </tr>
+  
+app/views/posts/index.html.erb:23:in `block in _app_views_posts_index_html_erb__6040477_116273940'
+app/views/posts/index.html.erb:19:in `_app_views_posts_index_html_erb__6040477_116273940'
+Started GET "/posts" for 127.0.0.1 at 2018-08-29 14:20:27 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (0.0ms)
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (48.0ms)
+Completed 500 Internal Server Error in 196ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for #<Post:0x000000000e3e4d48>
+Did you mean?  user_id):
+    20:       <tr>
+    21:         <td><%= post.title %></td>
+    22:         <td><%= post.content %></td>
+    23:         <td><%= link_to post.user.sitename,
+    24:                         controller: :users, action: :show,
+    25:                         id:post.user_id %></td>
+    26:       </tr>
+  
+app/views/posts/index.html.erb:23:in `block in _app_views_posts_index_html_erb__6040477_119663120'
+app/views/posts/index.html.erb:19:in `_app_views_posts_index_html_erb__6040477_119663120'
+Started GET "/posts" for 127.0.0.1 at 2018-08-29 14:21:20 +0900
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (52.0ms)
+  [1m[36mPost Load (4.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (104.0ms)
+Completed 500 Internal Server Error in 328ms (ActiveRecord: 12.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for #<Post:0x0000000008fb17a8>
+Did you mean?  user_id):
+    20:       <tr>
+    21:         <td><%= post.title %></td>
+    22:         <td><%= post.content %></td>
+    23:         <td><%= link_to post.user.sitename,
+    24:                         controller: :users, action: :show,
+    25:                         id:post.user_id %></td>
+    26:       </tr>
+  
+app/views/posts/index.html.erb:23:in `block in _app_views_posts_index_html_erb__1031806512_97195200'
+app/views/posts/index.html.erb:19:in `_app_views_posts_index_html_erb__1031806512_97195200'
+Started GET "/users" for 127.0.0.1 at 2018-08-29 14:24:12 +0900
+Processing by UsersController#index as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered users/_form.html.erb (8.0ms)
+  Rendered users/index.html.erb within layouts/application (132.9ms)
+Completed 200 OK in 4791ms (Views: 4713.7ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-08-29 14:24:19 +0900
+Processing by UsersController#index as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered users/_form.html.erb (19.0ms)
+  Rendered users/index.html.erb within layouts/application (125.9ms)
+Completed 200 OK in 1726ms (Views: 1646.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/helo" for 127.0.0.1 at 2018-08-29 14:24:33 +0900
+Processing by HeloController#index as HTML
+  Rendering helo/index.html.erb within layouts/application
+  Rendered helo/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 1230ms (Views: 1112.7ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/accounts/sign_out" for 127.0.0.1 at 2018-08-29 14:24:38 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"veG8iszIIcFtvmgRpZL8eHpb/I97u0wQ0/c1OzFDwKX4BSnhuPuJs6+QSj0Hr20FHNRrsEORnuTHGIqTzK6Izg=="}
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (7.0ms)[0m  [1m[33mUPDATE "accounts" SET "remember_created_at" = ?, "updated_at" = ? WHERE "accounts"."id" = ?[0m  [["remember_created_at", nil], ["updated_at", "2018-08-29 05:24:39.061743"], ["id", 4]]
+  [1m[35m (43.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 345ms (ActiveRecord: 52.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 14:24:39 +0900
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb (11.0ms)
+Completed 200 OK in 545ms (Views: 174.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/helo" for 127.0.0.1 at 2018-08-29 14:25:03 +0900
+Processing by HeloController#index as HTML
+  Rendering helo/index.html.erb within layouts/application
+  Rendered helo/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 1176ms (Views: 1093.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/helo/login_check" for 127.0.0.1 at 2018-08-29 14:25:10 +0900
+Processing by HeloController#login_check as HTML
+Completed 401 Unauthorized in 21ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/sign_in" for 127.0.0.1 at 2018-08-29 14:25:10 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (6.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (244.8ms)
+Completed 200 OK in 2157ms (Views: 2113.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/helo/users" for 127.0.0.1 at 2018-08-29 14:26:09 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/helo/users"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/helo" for 127.0.0.1 at 2018-08-29 14:26:32 +0900
+Processing by HeloController#index as HTML
+  Rendering helo/index.html.erb within layouts/application
+  Rendered helo/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 1152ms (Views: 1033.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-08-29 14:26:35 +0900
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/sign_in" for 127.0.0.1 at 2018-08-29 14:26:35 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (7.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (131.9ms)
+Completed 200 OK in 1970ms (Views: 1966.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts/sign_in" for 127.0.0.1 at 2018-08-29 14:26:53 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cHeS2MtwR+AHcsiDiVrFFe5ULr12KTi8YECBPh3NO5SltZK9r2THLP1HQLOiKn8tmh9igXVv3OWH7t8zW27JDQ==", "account"=>{"email"=>"migyu72@neko2.net", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mAccount Load (4.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["email", "migyu72@neko2.net"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 64ms (ActiveRecord: 4.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cHeS2MtwR+AHcsiDiVrFFe5ULr12KTi8YECBPh3NO5SltZK9r2THLP1HQLOiKn8tmh9igXVv3OWH7t8zW27JDQ==", "account"=>{"email"=>"migyu72@neko2.net", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (89.9ms)
+Completed 200 OK in 2308ms (Views: 1540.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts/sign_in" for 127.0.0.1 at 2018-08-29 14:27:17 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jhuNn/xLn7rwfBprEztLL9XDvXLZsAJVdTjCPZpAVeRb2Y36mF8fdgpJkls4S/EXoYjxTtr25gySlpww3OOnfQ==", "account"=>{"email"=>"zzzzz@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mAccount Load (2.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["email", "zzzzz@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (7.0ms)[0m  [1m[33mUPDATE "accounts" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "accounts"."id" = ?[0m  [["current_sign_in_at", "2018-08-29 05:27:17.861033"], ["last_sign_in_at", "2018-08-29 04:58:38.161655"], ["sign_in_count", 16], ["updated_at", "2018-08-29 05:27:17.865031"], ["id", 4]]
+  [1m[35m (27.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 1459ms (ActiveRecord: 36.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-08-29 14:27:18 +0900
+Processing by UsersController#index as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered users/_form.html.erb (8.0ms)
+  Rendered users/index.html.erb within layouts/application (97.9ms)
+Completed 200 OK in 1574ms (Views: 1471.4ms | ActiveRecord: 3.0ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2018-08-29 14:27:43 +0900
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kdL2HV6Z9le9v9LY5yeU4acTyEp16sM0eiB4jXbwCwYuayvK0CWpFViwAWdh2jiI17wBD8O9k0+EWxFXzakEIg==", "user"=>{"sitename"=>"Yoko", "account_id"=>"4", "intro"=>"もっといろいろ便利になったらいいな。旅行やウォーキングが好きです\r\n"}, "commit"=>"Update User", "id"=>"1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAccount Load (2.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (7.0ms)[0m  [1m[33mUPDATE "users" SET "intro" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["intro", "もっといろいろ便利になったらいいな。旅行やウォーキングが好きです\r\n"], ["updated_at", "2018-08-29 05:27:44.094000"], ["id", 1]]
+  [1m[35m (24.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 75ms (ActiveRecord: 33.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-08-29 14:27:44 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (2.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (11.0ms)
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (238.9ms)
+Completed 500 Internal Server Error in 769ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for #<Post:0x000000000bf51b48>
+Did you mean?  user_id):
+    20:       <tr>
+    21:         <td><%= post.title %></td>
+    22:         <td><%= post.content %></td>
+    23:         <td><%= link_to post.user.sitename,
+    24:                         controller: :users, action: :show,
+    25:                         id:post.user_id %></td>
+    26:       </tr>
+  
+app/views/posts/index.html.erb:23:in `block in _app_views_posts_index_html_erb__1031806512_106000540'
+app/views/posts/index.html.erb:19:in `_app_views_posts_index_html_erb__1031806512_106000540'
+Started GET "/posts" for 127.0.0.1 at 2018-08-29 14:34:40 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (7.0ms)
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (131.9ms)
+Completed 500 Internal Server Error in 513ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for #<Post:0x000000000cea4dc0>
+Did you mean?  user_id):
+    20:       <tr>
+    21:         <td><%= post.title %></td>
+    22:         <td><%= post.content %></td>
+    23:         <td><%= link_to post.user.sitename,
+    24:                         controller: :users, action: :show,
+    25:                         id:post.user_id %></td>
+    26:       </tr>
+  
+app/views/posts/index.html.erb:23:in `block in _app_views_posts_index_html_erb__1031806512_109121480'
+app/views/posts/index.html.erb:19:in `_app_views_posts_index_html_erb__1031806512_109121480'
+Started GET "/posts" for 127.0.0.1 at 2018-08-29 14:36:30 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (7.0ms)
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (128.9ms)
+Completed 500 Internal Server Error in 498ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `sitename' for 1:Integer):
+    20:       <tr>
+    21:         <td><%= post.title %></td>
+    22:         <td><%= post.content %></td>
+    23:         <td><%= link_to post.user_id.sitename,
+    24:                         controller: :users, action: :show,
+    25:                         id:post.user_id %></td>
+    26:       </tr>
+  
+app/views/posts/index.html.erb:23:in `block in _app_views_posts_index_html_erb__1031806512_111197880'
+app/views/posts/index.html.erb:19:in `_app_views_posts_index_html_erb__1031806512_111197880'
+Started GET "/posts" for 127.0.0.1 at 2018-08-29 14:37:35 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (7.0ms)
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (221.9ms)
+Completed 500 Internal Server Error in 608ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `user_id_sitename' for #<Post:0x000000000d651aa0>
+Did you mean?  user_id_was):
+    20:       <tr>
+    21:         <td><%= post.title %></td>
+    22:         <td><%= post.content %></td>
+    23:         <td><%= link_to post.user_id_sitename,
+    24:                         controller: :users, action: :show,
+    25:                         id:post.user_id %></td>
+    26:       </tr>
+  
+app/views/posts/index.html.erb:23:in `block in _app_views_posts_index_html_erb__1031806512_112525600'
+app/views/posts/index.html.erb:19:in `_app_views_posts_index_html_erb__1031806512_112525600'
+Started GET "/posts" for 127.0.0.1 at 2018-08-29 14:39:09 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (120.7ms)
+  [1m[36mPost Load (109.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (750.2ms)
+Completed 500 Internal Server Error in 2056ms (ActiveRecord: 111.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for #<Post:0x000000000d849380>
+Did you mean?  user_id):
+    20:       <tr>
+    21:         <td><%= post.title %></td>
+    22:         <td><%= post.content %></td>
+    23:         <td><%= link_to post.user.sitename,
+    24:                         controller: :users, action: :show,
+    25:                         id:post.user_id %></td>
+    26:       </tr>
+  
+app/views/posts/index.html.erb:23:in `block in _app_views_posts_index_html_erb__1031806512_113726160'
+app/views/posts/index.html.erb:19:in `_app_views_posts_index_html_erb__1031806512_113726160'
+Started GET "/posts" for 127.0.0.1 at 2018-08-29 14:52:30 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (7.0ms)
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (150.9ms)
+Completed 500 Internal Server Error in 977ms (ActiveRecord: 61.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for #<Post:0x000000000dd7b6a0>
+Did you mean?  user_id):
+    20:       <tr>
+    21:         <td><%= post.title %></td>
+    22:         <td><%= post.content %></td>
+    23:         <td><%= link_to post.user.sitename,
+    24:                         controller: :users, action: :show,
+    25:                         id:post.user_id %></td>
+    26:       </tr>
+  
+app/views/posts/index.html.erb:23:in `block in _app_views_posts_index_html_erb__1031806512_117205040'
+app/views/posts/index.html.erb:19:in `_app_views_posts_index_html_erb__1031806512_117205040'
+Started GET "/ajax/index" for 127.0.0.1 at 2018-08-29 15:01:47 +0900
+Processing by AjaxController#index as HTML
+  Rendering ajax/index.html.erb within layouts/ajax
+  Rendered ajax/index.html.erb within layouts/ajax (34.0ms)
+Completed 200 OK in 2107ms (Views: 1840.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ajax/data" for 127.0.0.1 at 2018-08-29 15:01:53 +0900
+Processing by AjaxController#data as */*
+{"rss":{"xmlns:blogChannel":"http://backend.userland.com/blogChannelModule","version":"2.0","channel":{"title":"Yahoo!ニュース・トピックス - スポーツ","link":"https://news.yahoo.co.jp/hl?c=c_spo","description":"Yahoo! JAPANのニュース・トピックスで取り上げている最新の見出しを提供しています。","language":"ja","pubDate":"Wed, 29 Aug 2018 15:01:45 +0900","item":[{"title":"バスケ4選手 出場権1年剥奪","link":"https://news.yahoo.co.jp/pickup/6295097","pubDate":"Wed, 29 Aug 2018 14:36:56 +0900","enclosure":{"length":"133","url":"https://s.yimg.jp/images/icon/photo.gif","type":"image/gif","__content__":"\n"},"guid":"yahoo/news/topics/6295097"},{"title":"落合氏を糾弾騒動 浅尾に聞く","link":"https://news.yahoo.co.jp/pickup/6295088","pubDate":"Wed, 29 Aug 2018 13:12:09 +0900","enclosure":{"length":"133","url":"https://s.yimg.jp/images/icon/photo.gif","type":"image/gif","__content__":"\n"},"guid":"yahoo/news/topics/6295088"},{"title":"酷暑のマラソン 完走率60%も","link":"https://news.yahoo.co.jp/pickup/6295079","pubDate":"Wed, 29 Aug 2018 11:51:45 +0900","enclosure":{"length":"133","url":"https://s.yimg.jp/images/icon/photo.gif","type":"image/gif","__content__":"\n"},"guid":"yahoo/news/topics/6295079"},{"title":"全米OP 初の酷暑ルール適用","link":"https://news.yahoo.co.jp/pickup/6295080","pubDate":"Wed, 29 Aug 2018 12:03:31 +0900","enclosure":{"length":"133","url":"https://s.yimg.jp/images/icon/photo.gif","type":"image/gif","__content__":"\n"},"guid":"yahoo/news/topics/6295080"},{"title":"錦織 完勝で全米OP初戦突破","link":"https://news.yahoo.co.jp/pickup/6295059","pubDate":"Wed, 29 Aug 2018 09:54:17 +0900","enclosure":{"length":"133","url":"https://s.yimg.jp/images/icon/photo.gif","type":"image/gif","__content__":"\n"},"guid":"yahoo/news/topics/6295059"},{"title":"17歳MF久保「君づけ止めて」","link":"https://news.yahoo.co.jp/pickup/6295046","pubDate":"Wed, 29 Aug 2018 08:22:20 +0900","enclosure":{"length":"133","url":"https://s.yimg.jp/images/icon/photo.gif","type":"image/gif","__content__":"\n"},"guid":"yahoo/news/topics/6295046"},{"title":"U18壮行 大学侍が根尾を絶賛","link":"https://news.yahoo.co.jp/pickup/6295027","pubDate":"Wed, 29 Aug 2018 01:24:05 +0900","enclosure":{"length":"133","url":"https://s.yimg.jp/images/icon/photo.gif","type":"image/gif","__content__":"\n"},"guid":"yahoo/news/topics/6295027"},{"title":"なでしこ決勝へ 韓国と死闘","link":"https://news.yahoo.co.jp/pickup/6295029","pubDate":"Wed, 29 Aug 2018 02:57:42 +0900","enclosure":{"length":"133","url":"https://s.yimg.jp/images/icon/photo.gif","type":"image/gif","__content__":"\n"},"guid":"yahoo/news/topics/6295029"}]}}}
+  Rendering ajax/data.js.erb
+  Rendered ajax/data.js.erb (2.0ms)
+Completed 200 OK in 8324ms (Views: 1864.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-08-29 15:02:19 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (12.0ms)
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (169.5ms)
+Completed 500 Internal Server Error in 511ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for #<Post:0x000000000d63a968>
+Did you mean?  user_id):
+    20:       <tr>
+    21:         <td><%= post.title %></td>
+    22:         <td><%= post.content %></td>
+    23:         <td><%= link_to post.user.sitename,
+    24:                         controller: :users, action: :show,
+    25:                         id:post.user_id %></td>
+    26:       </tr>
+  
+app/views/posts/index.html.erb:23:in `block in _app_views_posts_index_html_erb__1031806512_113363560'
+app/views/posts/index.html.erb:19:in `_app_views_posts_index_html_erb__1031806512_113363560'
+Started GET "/posts" for 127.0.0.1 at 2018-08-29 15:02:28 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (7.0ms)
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (2414.5ms)
+Completed 500 Internal Server Error in 6207ms (ActiveRecord: 4.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for #<Post:0x000000000da40f30>
+Did you mean?  user_id):
+    20:       <tr>
+    21:         <td><%= post.title %></td>
+    22:         <td><%= post.content %></td>
+    23:         <td><%= link_to post.user.sitename,
+    24:                         controller: :users, action: :show,
+    25:                         id:post.user_id %></td>
+    26:       </tr>
+  
+app/views/posts/index.html.erb:23:in `block in _app_views_posts_index_html_erb__1031806512_114738280'
+app/views/posts/index.html.erb:19:in `_app_views_posts_index_html_erb__1031806512_114738280'
+Started GET "/posts" for 127.0.0.1 at 2018-08-29 15:04:02 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (6.0ms)
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (140.9ms)
+Completed 500 Internal Server Error in 536ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for #<Post:0x000000000db02928>
+Did you mean?  user_id):
+    20:       <tr>
+    21:         <td><%= post.title %></td>
+    22:         <td><%= post.content %></td>
+    23:         <td><%= link_to post.user.sitename,
+    24:                         controller: :users, action: :show,
+    25:                         id:post.user_id %></td>
+    26:       </tr>
+  
+app/views/posts/index.html.erb:23:in `block in _app_views_posts_index_html_erb__1031806512_114989680'
+app/views/posts/index.html.erb:19:in `_app_views_posts_index_html_erb__1031806512_114989680'
+Started GET "/posts" for 127.0.0.1 at 2018-08-29 19:56:26 +0900
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 112ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/sign_in" for 127.0.0.1 at 2018-08-29 19:56:30 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (5.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (334.8ms)
+Completed 200 OK in 5778ms (Views: 5647.8ms | ActiveRecord: 6.0ms)
+
+
+Started POST "/accounts/sign_in" for 127.0.0.1 at 2018-08-29 19:57:25 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iyT2cpR6Hx4EJ50VIUIBj6GCI+nI++gNIFNyDR74N3sR+AvQNPb5LrbA7GqmSm3/cp8gs5Syr8Wopc1aYKLfrw==", "account"=>{"email"=>"zzzzz@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["email", "zzzzz@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.0ms)[0m  [1m[33mUPDATE "accounts" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "accounts"."id" = ?[0m  [["current_sign_in_at", "2018-08-29 10:57:26.752150"], ["last_sign_in_at", "2018-08-29 05:27:17.861033"], ["sign_in_count", 17], ["updated_at", "2018-08-29 10:57:26.756147"], ["id", 4]]
+  [1m[35m (17.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 1476ms (ActiveRecord: 22.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-08-29 19:57:27 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (22.0ms)
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (189.9ms)
+Completed 500 Internal Server Error in 905ms (ActiveRecord: 10.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for #<Post:0x000000000ca7f060>
+Did you mean?  user_id):
+    20:       <tr>
+    21:         <td><%= post.title %></td>
+    22:         <td><%= post.content %></td>
+    23:         <td><%= link_to post.user.sitename,
+    24:                         controller: :users, action: :show,
+    25:                         id:post.user_id %></td>
+    26:       </tr>
+  
+app/views/posts/index.html.erb:23:in `block in _app_views_posts_index_html_erb__968355241_107366420'
+app/views/posts/index.html.erb:19:in `_app_views_posts_index_html_erb__968355241_107366420'
+Started GET "/users" for 127.0.0.1 at 2018-08-29 19:58:09 +0900
+Processing by UsersController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered users/_form.html.erb (0.0ms)
+  Rendered users/index.html.erb within layouts/application (234.4ms)
+Completed 200 OK in 2120ms (Views: 1224.6ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2018-08-29 19:58:23 +0900
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0WVgFDqN/iJi23yWD3CDqmIy1qaiabEsozP85I4BTZbafB4HxZ43Aeaf4oWTtPkBpU8QL8qHdAUTnprEeOOUwA==", "user"=>{"sitename"=>"Yoko", "account_id"=>"4", "intro"=>"もっといろいろ便利になったらいいな。旅行やウォーキングが好きです\r\n"}, "commit"=>"Update User", "id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 31ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-08-29 19:58:23 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (5.0ms)
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (120.9ms)
+Completed 500 Internal Server Error in 469ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for #<Post:0x000000000e322b08>
+Did you mean?  user_id):
+    20:       <tr>
+    21:         <td><%= post.title %></td>
+    22:         <td><%= post.content %></td>
+    23:         <td><%= link_to post.user.sitename,
+    24:                         controller: :users, action: :show,
+    25:                         id:post.user_id %></td>
+    26:       </tr>
+  
+app/views/posts/index.html.erb:23:in `block in _app_views_posts_index_html_erb__968355241_73509560'
+app/views/posts/index.html.erb:19:in `_app_views_posts_index_html_erb__968355241_73509560'
+Started GET "/posts" for 127.0.0.1 at 2018-08-29 20:02:09 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (7.0ms)
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (127.9ms)
+Completed 500 Internal Server Error in 555ms (ActiveRecord: 10.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for #<Post:0x000000000d8d5808>
+Did you mean?  user_id):
+    20:       <tr>
+    21:         <td><%= post.title %></td>
+    22:         <td><%= post.content %></td>
+    23:         <td><%= link_to post.user.sitename,
+    24:                         controller: :users, action: :show,
+    25:                         id:post.user_id %></td>
+    26:       </tr>
+  
+app/views/posts/index.html.erb:23:in `block in _app_views_posts_index_html_erb__968355241_114060480'
+app/views/posts/index.html.erb:19:in `_app_views_posts_index_html_erb__968355241_114060480'
+Started GET "/users" for 127.0.0.1 at 2018-08-29 20:02:38 +0900
+Processing by UsersController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered users/_form.html.erb (0.0ms)
+  Rendered users/index.html.erb within layouts/application (78.1ms)
+Completed 200 OK in 1254ms (Views: 1188.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-08-29 20:04:48 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (0.0ms)
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (233.2ms)
+Completed 200 OK in 1552ms (Views: 1269.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-08-29 20:05:35 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 1029ms (Views: 955.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-08-29 20:05:50 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (0.0ms)
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (191.7ms)
+Completed 200 OK in 1238ms (Views: 1176.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-08-29 20:29:59 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (9.0ms)
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (315.8ms)
+Completed 200 OK in 1742ms (Views: 1632.4ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-08-29 20:32:26 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (2.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (16.0ms)
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (268.8ms)
+Completed 200 OK in 1859ms (Views: 1784.1ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-08-30 14:07:23 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (4.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (93.9ms)
+  [1m[36mPost Load (3.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (508.8ms)
+Completed 200 OK in 5022ms (Views: 4865.8ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-08-30 17:40:30 +0900
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 196ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-08-30 17:40:35 +0900
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/sign_in" for 127.0.0.1 at 2018-08-30 17:40:35 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (822.1ms)
+Completed 200 OK in 14910ms (Views: 14856.5ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/accounts/sign_in" for 127.0.0.1 at 2018-08-30 17:41:22 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cMmWkI2mBN/FlgMZRrzaIR2Efr0BOAyZIKYcRO5/FMDQMJ2AbrOtR4XH+On67+Bde1e7u6eUsQotrmFp27lO+Q==", "account"=>{"email"=>"zzzzz@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mAccount Load (16.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["email", "zzzzz@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[33mUPDATE "accounts" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "accounts"."id" = ?[0m  [["current_sign_in_at", "2018-08-30 08:41:22.892574"], ["last_sign_in_at", "2018-08-29 10:57:26.752150"], ["sign_in_count", 18], ["updated_at", "2018-08-30 08:41:22.894573"], ["id", 4]]
+  [1m[35m (44.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 929ms (ActiveRecord: 63.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-08-30 17:41:23 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (20.0ms)
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (327.8ms)
+Completed 200 OK in 1411ms (Views: 1185.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-08-31 08:29:02 +0900
+Started GET "/posts" for 127.0.0.1 at 2018-08-31 08:29:02 +0900
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 112ms (ActiveRecord: 0.0ms)
+
+
+Completed 401 Unauthorized in 80ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/sign_in" for 127.0.0.1 at 2018-08-31 08:29:05 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (260.9ms)
+Completed 200 OK in 5798ms (Views: 5674.5ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/accounts/sign_in" for 127.0.0.1 at 2018-08-31 08:29:36 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DNFSjkeqjLsEeuw5GHcUnWL7WgM7fxPNMtFIfOt7GPxZTWrIR7xyvTYJKIZC6SqZ4m8+LHav7WbBKnOWFKmVwQ==", "account"=>{"email"=>"zzzzz@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["email", "zzzzz@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.0ms)[0m  [1m[33mUPDATE "accounts" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "accounts"."id" = ?[0m  [["current_sign_in_at", "2018-08-30 23:29:36.786708"], ["last_sign_in_at", "2018-08-30 08:41:22.892574"], ["sign_in_count", 19], ["updated_at", "2018-08-30 23:29:36.790701"], ["id", 4]]
+  [1m[35m (231.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 1055ms (ActiveRecord: 235.9ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-08-31 08:29:37 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (4.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (12.0ms)
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (319.9ms)
+Completed 200 OK in 1323ms (Views: 1054.2ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-08-31 08:37:35 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (4.0ms)
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (84.0ms)
+Completed 200 OK in 752ms (Views: 717.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-08-31 08:37:43 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (0.0ms)
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (96.0ms)
+Completed 200 OK in 750ms (Views: 722.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-08-31 08:43:01 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.0ms)
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (84.9ms)
+Completed 200 OK in 799ms (Views: 769.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-08-31 08:48:21 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (4.0ms)
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (98.4ms)
+Completed 200 OK in 833ms (Views: 794.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-08-31 09:13:45 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.0ms)
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (174.0ms)
+Completed 200 OK in 1278ms (Views: 1083.3ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-08-31 10:00:33 +0900
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (347.9ms)
+  [1m[36mPost Load (4.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (1463.9ms)
+Completed 200 OK in 4332ms (Views: 4064.4ms | ActiveRecord: 16.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-08-31 10:06:57 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (4.0ms)
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (92.0ms)
+Completed 200 OK in 504ms (Views: 483.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-08-31 10:07:51 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (4.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (4.0ms)
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (76.0ms)
+Completed 200 OK in 600ms (Views: 575.2ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-08-31 10:28:06 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (0.0ms)
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (80.0ms)
+Completed 200 OK in 5165ms (Views: 5136.5ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-08-31 14:36:20 +0900
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (944.0ms)
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (1702.6ms)
+Completed 200 OK in 21376ms (Views: 20791.8ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-08-31 22:33:53 +0900
+Started GET "/posts" for 127.0.0.1 at 2018-08-31 22:33:54 +0900
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 44ms (ActiveRecord: 0.0ms)
+
+
+Completed 401 Unauthorized in 88ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/sign_in" for 127.0.0.1 at 2018-08-31 22:33:56 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (4.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1384.1ms)
+Completed 200 OK in 8017ms (Views: 7787.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts/sign_in" for 127.0.0.1 at 2018-08-31 22:35:07 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zfhmxGrfHdOiwxF9vdZq8sVX16Agj2X4b5VuHv90CCP9a+UcB0RNXvJ0qEEA1DZO+z5Ng8Rmw6f62pkruYl9TQ==", "account"=>{"email"=>"zzzzz@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mAccount Load (20.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["email", "zzzzz@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (72.0ms)[0m  [1m[33mUPDATE "accounts" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "accounts"."id" = ?[0m  [["current_sign_in_at", "2018-08-31 13:35:08.492205"], ["last_sign_in_at", "2018-08-30 23:29:36.786708"], ["sign_in_count", 20], ["updated_at", "2018-08-31 13:35:08.492205"], ["id", 4]]
+  [1m[35m (84.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 1248ms (ActiveRecord: 175.9ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-08-31 22:35:09 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (12.0ms)
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (623.8ms)
+Completed 500 Internal Server Error in 948ms (ActiveRecord: 8.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `post' for #<#<Class:0x000000000db9e0d0>:0x000000000db97fa0>
+Did you mean?  @post
+               @posts):
+    30: 
+    31: </table>
+    32: 
+    33: <%= render "likes/like", post: post %>
+    34: <br>
+    35: <div><%= paginate @posts %></div>
+    36: <hr>
+  
+app/views/posts/index.html.erb:33:in `_app_views_posts_index_html_erb__59346967_115144340'
+Started GET "/posts" for 127.0.0.1 at 2018-08-31 22:36:37 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (0.0ms)
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered likes/_like.html.erb (227.9ms)
+  Rendered posts/index.html.erb within layouts/application (287.9ms)
+Completed 500 Internal Server Error in 436ms (ActiveRecord: 4.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `user_signed_in?' for #<#<Class:0x000000000db9e0d0>:0x000000000d51d3c8>):
+    1: <% if user_signed_in? %>
+    2:   <% if post.like_user(current_user.id) %>
+    3:     <%= link_to post_like_path(post_id: @post.id, id: @like.id), method: :delete, remote: true do %>
+    4:       <div class="like-now floats">
+  
+app/views/likes/_like.html.erb:1:in `_app_views_likes__like_html_erb__363529551_110497900'
+app/views/posts/index.html.erb:33:in `_app_views_posts_index_html_erb__59346967_111734600'
+Started GET "/posts" for 127.0.0.1 at 2018-08-31 23:02:33 +0900
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (357.9ms)
+  [1m[36mPost Load (2.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered likes/_like.html.erb (574.6ms)
+  Rendered posts/index.html.erb within layouts/application (1451.5ms)
+Completed 500 Internal Server Error in 2275ms (ActiveRecord: 18.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `user_signed_in?' for #<#<Class:0x000000000b842af0>:0x000000000b839018>):
+    1: <% if user_signed_in? %>
+    2:   <% if post.like_user(current_user.id) %>
+    3:     <%= link_to post_like_path(post_id: @post.id, id: @like.id), method: :delete, remote: true do %>
+    4:       <div class="like-now floats">
+  
+app/views/likes/_like.html.erb:1:in `_app_views_likes__like_html_erb__481610222_75578260'
+app/views/posts/index.html.erb:33:in `_app_views_posts_index_html_erb__853289319_96607840'
+Started GET "/posts" for 127.0.0.1 at 2018-08-31 23:05:30 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (7.0ms)
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (582.6ms)
+Completed 500 Internal Server Error in 987ms (ActiveRecord: 7.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial posts/_like, application/_like with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "C:/Users/hsuzuki/RailsApp7/app/views"
+  * "C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/kaminari-core-1.1.1/app/views"
+  * "C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.3/app/views"
+):
+    30: 
+    31: </table>
+    32: 
+    33: <%= render "like", post: @post %>
+    34: <br>
+    35: <div><%= paginate @posts %></div>
+    36: <hr>
+  
+app/views/posts/index.html.erb:33:in `_app_views_posts_index_html_erb__853289319_75394080'
+Started GET "/posts" for 127.0.0.1 at 2018-08-31 23:06:43 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (9.0ms)
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (310.5ms)
+Completed 200 OK in 5940ms (Views: 5861.3ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-08-31 23:08:04 +0900
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (7.0ms)
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (255.8ms)
+Completed 200 OK in 1667ms (Views: 1588.9ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-08-31 23:09:06 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAccount Load (2.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 1994ms (Views: 1862.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2018-08-31 23:09:18 +0900
+Processing by UsersController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (account_id == 4)[0m
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered users/_form.html.erb (7.0ms)
+  Rendered users/index.html.erb within layouts/application (398.8ms)
+Completed 200 OK in 1956ms (Views: 1865.8ms | ActiveRecord: 1.0ms)
+
+
