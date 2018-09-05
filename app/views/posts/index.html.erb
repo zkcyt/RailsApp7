@@ -26,9 +26,17 @@
                         id:post.user_id %></td>
       </tr>
     <% end %>
+
   </tbody>
 
 </table>
+
+<!-- いいね追加・削除 -->
+<div id="like-area-<%= @post.id %>">
+  <%#= render partial: 'likes/like', locals: { post: @post, like: @like } %>
+  <%= render partial: 'likes/like', locals: { post: @post, likes: @likes } %>
+</div>
+
 
 <%# = render "likes/like", post: @post %>
 <br>

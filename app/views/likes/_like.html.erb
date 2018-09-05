@@ -1,34 +1,27 @@
-<% if user_signed_in? %>
-  <% if post.like_user(current_user.id) %>
-    <%= link_to post_like_path(post_id: @post.id, id: @like.id), method: :delete, remote: true do %>
-      <div class="like-now floats">
-      <%#= button_to post_like_path(like, post_id: post.id), method: :delete, id: "like-button", remote: true do %>
-      <i class="fas fa-heart"></i>
-      <%#= content_tag :span, "#", class: "glyphicon glyphicon-heart" %>
-      <%#= image_tag("icon_red_heart.svg") %>
-      <span>
-        <%= post.like_count %>
-      </span>
-    <% end %>
-    </div>
-  <% else %>
-    <%= link_to post_likes_path(post_id: @post.id), method: :post, remote: true do %>
-       <div class="like-not floats">
-       <%#= button_to post_likes_path(post), id: "like-button", remote: true do %>
-       <i class="far fa-heart"></i>
-      <%#= content_tag :span, "#", class: "glyphicon glyphicon-heart-empty" %>
-      <%#= image_tag("icon_heart.svg") %>
-      <span>
-        <%= post.like_count %>
-      </span>
-    <% end %>
-    </div>
+<% if account_signed_in? %>
+  <% if @post.like_user(current_account.id) %>
+    <% if @like.present? %>
+       <div class="like-now floats">
+       <%= link_to post_like_path(post_id: @post.id, id: @like.id), method: :delete, remote: true do %>
+          <i class="fa fa-heart fa-2x like-now">いいね済み</i>
+          <span>
+             <%= post.likes.count %>
+           </span>
+       <% end %>
+       </div>
+
+   <% else %>
+      <div class="like-not floats">
+      <%= link_to post_likes_path(post_id: @post.id), method: :post, remote: true do %>
+        <i class="fa fa-heart fa-2x like-not">いいね</i>
+        <span>
+             <%= post.likes.count %>
+        </span>
+     <% end %>
+     </div>
+
+   <% end %>
   <% end %>
-<% else %>
-  <i class="far fa-heart"></i>
-  <%# = image_tag("icon_heart.svg") %>
-    <span>
-      <%= post.like_count %>
-    </span>
 <% end %>
+
 <div class="like-count floats">いいね！<%= @likes_count %>件</div>

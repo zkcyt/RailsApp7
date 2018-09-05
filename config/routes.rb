@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :likes, only: [:create, :destroy]
+  # resources :likes, only: [:create, :destroy]
 
   # post "likes/:post_id/create" => "likes#create"
   # post "likes/:post_id/destroy" => "likes#destroy"
@@ -11,6 +11,9 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy]
   end
 
+  devise_for :accounts
+  # root 'home#index'
+  # root 'helo#index'
 
   get 'ajax/index'
   get 'ajax/data'
@@ -23,9 +26,7 @@ Rails.application.routes.draw do
   # get 'data_pages/index'
   # get 'data_pages', to: "data_pages#index"
 
-  devise_for :accounts
-  # root 'home#index'
-  # root 'helo#index'
+
 
   get 'holo/index'
   get 'helo', to: "helo#index"
