@@ -1,3 +1,4 @@
 // $("#like_area").html("<%= j(render partial: 'index') %>")
-$("#like-area-<%= @post.id %>").html("<%= j(render partial: 'like', locals: { posts: @posts, likes: @likes }) %>");
+//$("#like-area-<%= @post.id %>").html("<%= j(render partial: 'like', locals: { posts: @posts, likes: @likes }) %>");
 //$(".like-button-<%= @like.post_id %>").html("<%= j(render partial: 'like', locals: { post: @post, user_id: @user_id }) %>")
+$("#like-button-<%= @post.id %>").html("<%= j(render partial: 'like', locals: { post: @post }) %>");

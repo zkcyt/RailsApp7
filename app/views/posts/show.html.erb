@@ -11,9 +11,14 @@
 </p>
 
 <p>
+  <strong>Details:</strong>
+  <%= @post.details %>
+</p>
+
+<p>
   <strong>User:</strong>
   <%= @post.user_id %>
 </p>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
+<%#= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>

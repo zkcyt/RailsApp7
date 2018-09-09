@@ -9,8 +9,8 @@
 <table width="90%">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Content</th>
+      <th width="20%">Title</th>
+      <th width="70%">Content</th>
       <th width="150px">User</th>
     </tr>
   </thead>
@@ -19,27 +19,30 @@
     <% @posts.each do |post| %>
       <tr>=
         <td><%= post.title %></td>
-        <td><%= post.content %>   <small><i class="fa fa-heart fa-fw"></i>いいね！ <%= post.likes.count %>件</small></td>
-
+        <%#= link_to post.details,
+                        action: :show,
+                        id:post_id %>
+        <td><%= post.content %></td>
+        <!-- いいね追加・削除 -->
+            <span id="like-button-<%= @post.id %>">
+              <%#= render partial: 'likes/like', locals: { post: @post, like: @like } %>
+              <%= render partial: 'likes/like', locals: { post: post, likes: @likes } %>
+            </span>
         <td><%= link_to post.user.sitename,
                         controller: :users, action: :show,
                         id:post.user_id %></td>
       </tr>
     <% end %>
-
   </tbody>
-
 </table>
 
-<!-- いいね追加・削除 -->
-<div id="like-area-<%= @post.id %>">
-  <%#= render partial: 'likes/like', locals: { post: @post, like: @like } %>
-  <%= render partial: 'likes/like', locals: { post: @post, likes: @likes } %>
-</div>
+
+<!-- 変更ここから -->
 
 
-<%# = render "likes/like", post: @post %>
-<br>
+<!-- 変更ここまで -->
+
+
 <div><%= paginate @posts %></div>
 <hr>
 <div>copyright Tree 2018</div>
