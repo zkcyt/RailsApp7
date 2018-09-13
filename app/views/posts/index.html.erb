@@ -9,8 +9,9 @@
 <table width="90%">
   <thead>
     <tr>
-      <th width="20%">Title</th>
-      <th width="70%">Content</th>
+      <th width="18%">Title</th>
+      <th width="7%"></th>
+      <th width="65%">Content</th>
       <th width="150px">User</th>
     </tr>
   </thead>
@@ -19,15 +20,13 @@
     <% @posts.each do |post| %>
       <tr>=
         <td><%= post.title %></td>
-        <%#= link_to post.details,
-                        action: :show,
-                        id:post_id %>
-        <td><%= post.content %></td>
         <!-- いいね追加・削除 -->
-            <span id="like-button-<%= @post.id %>">
-              <%#= render partial: 'likes/like', locals: { post: @post, like: @like } %>
-              <%= render partial: 'likes/like', locals: { post: post, likes: @likes } %>
-            </span>
+        <td><span id="like-button-<%= @post.id %>">
+            <%#= render partial: 'likes/like', locals: { post: post } %>
+            <%= render partial: 'likes/like', locals: { post: post, likes: @likes } %>
+
+        </span></td>
+        <td><%= post.content %></td>
         <td><%= link_to post.user.sitename,
                         controller: :users, action: :show,
                         id:post.user_id %></td>
@@ -35,13 +34,6 @@
     <% end %>
   </tbody>
 </table>
-
-
-<!-- 変更ここから -->
-
-
-<!-- 変更ここまで -->
-
 
 <div><%= paginate @posts %></div>
 <hr>
