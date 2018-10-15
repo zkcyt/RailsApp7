@@ -1,21 +1,28 @@
 <% if account_signed_in? %>
   <% if post.like_user(current_account.id) %>
        <%= link_to post_like_path(post_id: post.id), method: :delete, id: "like-button", remote: true do %>
-        <i class="fas fa-heart"></i>
+        <%#=<i class="fas fa-heart"></i>%>
+        <%#=<i class="fa fa-heart" aria-hidden="true"></i>%>
+        <i class="fa fa-heart" ></i>
           <span>
              <%= post.likes_count %>
            </span>
        <% end %>
    <% else %>
      <%= link_to post_likes_path(post), method: :post, id: "like-button", remote: true do %>
-        <i class="fa fa-heart fa-fw"></i>
+        <%#=<i class="fa fa-heart fa-fw"></i>%>
+        <%#=<i class="fa fa-heart-o" aria-hidden="true"></i>%>
+        <i class="fa fa-heart-o"></i>
+
         <span>
              <%= post.likes_count %>
         </span>
      <% end %>
    <% end %>
 <% else %>
-   <i class="fa fa-heart fa-fw"></i>
+   <%#=<i class="fa fa-heart fa-fw"></i>%>
+   <%#=<i class="fa fa-heart-o" aria-hidden="true"></i>%>
+   <i class="fa fa-heart-o"></i>
      <span>
        <%= post.likes_count %>
      </span>
